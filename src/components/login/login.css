@@ -1,0 +1,40 @@
+#login{
+    width: 100vw;
+    height: 100vh;
+    background-color: royalblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#login img{
+    width: 100px;
+}
+#login #loginForm{
+    width: 340px;
+    height: max-content;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,.2);
+}
+#login #loginForm input{
+    width: 300px;
+    height: 40px;
+    margin: 20px 20px 0 20px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+}
+#login #loginForm button{
+    width: 300px;
+    height: 40px;
+    margin: 20px 20px 0 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: royalblue;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}

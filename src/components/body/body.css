@@ -1,0 +1,177 @@
+main{
+    max-width: 600px;
+    height: calc(100vh - 90px);
+    margin: 0 auto;
+}
+#newTask{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border: 3px solid royalblue;
+    margin: 0 auto;
+    width: 90%;
+    font-size: 20px;
+    text-align: center;
+    background-color: transparent;
+    color: royalblue;
+    border-radius: 25px;
+    margin-bottom: 30px;
+}
+#newTask #taskInput{
+    width: calc(100% - 50px);
+    height: 20px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    padding-left: 5px;
+    color: royalblue;
+}
+#newTask button{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background-color: royalblue;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+main hr{
+    width: 50px;
+    border: 0.01px solid royalblue;
+}
+main #statusFilter{
+    margin: 0 auto;
+    height: 40px;
+    width: max-content;
+    border: 1px solid royalblue;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+main #statusFilter #todoBtn{
+    width: max-content;
+    height: 100%;
+    font-size: 20px;
+    border: none;
+    color: royalblue;
+    background-color: transparent;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 10px;
+}
+main #statusFilter #completedBtn{
+    width: max-content;
+    height: 100%;
+    font-size: 20px;
+    border: none;
+    color: royalblue;
+    background-color: transparent;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 10px;
+}
+main #taskList{
+    margin: 0 auto;
+    width: 90%;
+    height: calc(100vh - 300px);
+    overflow-y: scroll;
+}
+main #taskList::-webkit-scrollbar{
+    display: none;
+}
+main #taskList #task{
+    text-align: left;
+    border-radius: 11px;
+    background-color: royalblue;
+    padding: 3px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+main #taskList #task #title{
+    font-size: 18px;
+    margin: 0;
+    padding: 10px;
+    width: calc(100% - 100px);
+}
+main #taskList #taskBtn{
+    display: flex;
+    flex-direction: row;
+}
+main #taskList #taskBtn #deleteBtn{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(216, 8, 8);
+}
+main #taskList #taskBtn #completeBtn{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: transparent;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(8, 216, 46);
+}
+
+main #taskList #taskBtn #deleteBtn:disabled{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: rgb(167, 167, 167);
+    border: 1px solid rgb(167, 167, 167);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(212, 211, 211);
+}
+main #taskList #taskBtn #completeBtn:disabled{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: transparent;
+    background-color: rgb(167, 167, 167);
+    border: 1px solid rgb(167, 167, 167);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(212, 211, 211);
+}
+main #statusFilter #completedBtn.active{
+    width: max-content;
+    height: 100%;
+    font-size: 20px;
+    color: white;
+    background-color: royalblue;
+    padding: 10px;
+    border: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+main #statusFilter #todoBtn.active {
+    width: max-content;
+    height: 100%;
+    font-size: 20px;
+    color: white;
+    background-color: royalblue;
+    padding: 10px;
+    border: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
