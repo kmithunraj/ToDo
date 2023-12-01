@@ -18,7 +18,7 @@ const Body = () => {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState(false);
   const [newTask, setNewTask] = useState("");
-  const user = sessionStorage.getItem('user');
+  let user = sessionStorage.getItem('user');
   const Navigate = useNavigate();
 
   useEffect(() => {
@@ -37,24 +37,37 @@ const Body = () => {
   }, [user]);
 
   useEffect(() => {
-    // Initialize 'user' key in sessionStorage if it doesn't exist
     if (!sessionStorage.getItem('user')) {
-      sessionStorage.setItem('user', ''); // You can set it to any default value you want
+      sessionStorage.setItem('user', '');
     }
   }, []);
 
+  user = sessionStorage.getItem('user');
+
+  useEffect(() => {
+    user = sessionStorage.getItem('user');
+
+    if (!user || user === "") {
+      Navigate('/login');
+    }
+  }, [user, Navigate]);
+
   const addNewTask = async () => {
-    if(user!== null && user!== "" && newTask !== ""){
+    user = sessionStorage.getItem('user');
+
+    if (!user || user === "" || user === "null") {
+      Navigate('/login');
+      return;
+    }
+
+    if (newTask !== '') {
       try {
         const docRef = await addDoc(collection(db, "tasks"), { userID: user, title: newTask, completed: false, deleted: false });
         setTasks([...tasks, { id: docRef.id, userID: user, title: newTask, completed: false, deleted: false }]);
-        setNewTask(''); // Clear input field after adding task
+        setNewTask('');
       } catch (error) {
         console.error('Error adding task:', error);
       }
-    }
-    else{
-      Navigate('/login');
     }
   }
 
